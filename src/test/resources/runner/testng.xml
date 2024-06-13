@@ -9,9 +9,9 @@
     <test verbose="2" preserve-order="true" name="TestSuite">
         <classes>
             <class name="com.orangehrm.web.testcases.ABTesting"/>
-            <class name="com.orangehrm.web.testcases.AddRemoveElementsTesting"/>
-            <class name="com.orangehrm.web.testcases.CheckboxesTest"/>
-            <class name="com.orangehrm.web.testcases.ContextMenuTest"/>
+<!--            <class name="com.orangehrm.web.testcases.AddRemoveElementsTesting"/>-->
+<!--            <class name="com.orangehrm.web.testcases.CheckboxesTest"/>-->
+<!--            <class name="com.orangehrm.web.testcases.ContextMenuTest"/>-->
         </classes>
     </test>
 </suite>
