@@ -31,8 +31,6 @@ public class TestBase {
 
     @BeforeMethod
     public void setUp() throws IOException {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Example: Run Chrome in headless mode
 
         fis = new FileInputStream(
 //                System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\Config.properties");
@@ -45,10 +43,18 @@ public class TestBase {
         OR.load(fis);
 
         if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver",
-//                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
-                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless"); // Example: Run Chrome in headless mode
+
+            // Set ChromeDriver path
+            System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+
+            // Initialize ChromeDriver
+            driver = new ChromeDriver(options);
+//            System.setProperty("webdriver.chrome.driver",
+////                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+//                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
+//            driver = new ChromeDriver();
         } else if (config.getProperty("browser").equalsIgnoreCase("Internet Explorer")) {
             System.setProperty("webdriver.ie.driver",
 //                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");

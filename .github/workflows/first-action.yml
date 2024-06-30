@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Set up ChromeDriver
+      - name: Download and set up ChromeDriver
         run: |
             CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
             wget -qP /tmp/ "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
