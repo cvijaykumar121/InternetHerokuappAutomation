@@ -3,6 +3,7 @@ package com.orangehrm.web.base;
 import com.orangehrm.web.pages.HomePage.HomePage;
 import com.orangehrm.web.utilities.ExtentManager;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,6 +31,8 @@ public class TestBase {
 
     @BeforeMethod
     public void setUp() throws IOException {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Example: Run Chrome in headless mode
 
         fis = new FileInputStream(
 //                System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\Config.properties");
@@ -44,12 +47,12 @@ public class TestBase {
         if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver",
 //                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
-                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver.exe");
+                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
             driver = new ChromeDriver();
         } else if (config.getProperty("browser").equalsIgnoreCase("Internet Explorer")) {
             System.setProperty("webdriver.ie.driver",
 //                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
-                    System.getProperty("user.dir") + "/src/test/resources/executables/IEDriverServer.exe");
+                    System.getProperty("user.dir") + "/src/test/resources/executables/IEDriverServer");
             driver = new InternetExplorerDriver();
         }
         js = (JavascriptExecutor) driver;
