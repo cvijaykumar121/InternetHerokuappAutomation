@@ -14,13 +14,11 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Download and set up ChromeDriver
+      - name: Set ChromeDriver Version
         run: |
           CHROMEDRIVER_VERSION="126.0.6478.126"
-          wget -qP /tmp/ "https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.126/linux64/chromedriver-linux64.zip"
-          unzip -q /tmp/chromedriver_linux64 -d /tmp/
-          sudo mv /tmp/chromedriver /usr/local/bin/chromedriver
-          sudo chmod +x /usr/local/bin/chromedriver
+          echo "CHROMEDRIVER_VERSION=$CHROMEDRIVER_VERSION" >> $GITHUB_ENV
+        shell: bash
 
       - name: Cache Maven packages
         uses: actions/cache@v3
