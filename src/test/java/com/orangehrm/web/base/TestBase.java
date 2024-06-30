@@ -32,20 +32,24 @@ public class TestBase {
     public void setUp() throws IOException {
 
         fis = new FileInputStream(
-                System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\Config.properties");
+//                System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\Config.properties");
+                System.getProperty("user.dir") + "/src/test/resources/properties/Config.properties");
         config.load(fis);
 
         fis = new FileInputStream(
-                System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\OR.properties");
+//                System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\OR.properties");
+                System.getProperty("user.dir") + "/src/test/resources/properties/OR.properties");
         OR.load(fis);
 
         if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver",
-                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+//                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver.exe");
             driver = new ChromeDriver();
         } else if (config.getProperty("browser").equalsIgnoreCase("Internet Explorer")) {
             System.setProperty("webdriver.ie.driver",
-                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
+//                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
+                    System.getProperty("user.dir") + "/src/test/resources/executables/IEDriverServer.exe");
             driver = new InternetExplorerDriver();
         }
         js = (JavascriptExecutor) driver;
