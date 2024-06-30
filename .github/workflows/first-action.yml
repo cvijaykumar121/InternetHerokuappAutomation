@@ -11,7 +11,6 @@ jobs:
       - name: Setup AdoptOpenJDK
         uses: joschi/setup-jdk@v2.5.1
         with:
-          distribution: 'adopt'
           java-version: '17'
 
 
