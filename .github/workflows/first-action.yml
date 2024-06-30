@@ -17,8 +17,14 @@ jobs:
       - name: Set ChromeDriver Version
         run: |
           CHROMEDRIVER_VERSION="126.0.6478.126"
-          echo "CHROMEDRIVER_VERSION=$CHROMEDRIVER_VERSION" >> $GITHUB_ENV
+          run: echo "CHROMEDRIVER_VERSION=${{ env.CHROMEDRIVER_VERSION }}" >> $GITHUB_ENV
         shell: bash
+
+      - name: Debug Output
+        run: |
+          echo "Current Shell: $SHELL"
+          echo "GITHUB_ENV: $GITHUB_ENV"
+          echo "CHROMEDRIVER_VERSION: $CHROMEDRIVER_VERSION"  
 
 #      - name: Cache Maven packages
 #        uses: actions/cache@v3
