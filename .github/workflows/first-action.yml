@@ -6,6 +6,10 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code from repo
         uses: actions/checkout@v4.1.7
+      - name: Setup AdoptOpenJDK
+        uses: joschi/setup-jdk@v2.5.1
+
+
 
