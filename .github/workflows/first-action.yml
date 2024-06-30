@@ -8,10 +8,19 @@ jobs:
     steps:
       - name: Checkout code from repo
         uses: actions/checkout@v4.1.7
+
       - name: Setup AdoptOpenJDK
         uses: joschi/setup-jdk@v2.5.1
         with:
           java-version: '17'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
 
 
