@@ -10,6 +10,9 @@ jobs:
         uses: actions/checkout@v4.1.7
       - name: Setup AdoptOpenJDK
         uses: joschi/setup-jdk@v2.5.1
+        with:
+          distribution: 'adopt'
+          java-version: '17'
 
 
 
