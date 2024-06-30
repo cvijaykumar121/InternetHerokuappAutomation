@@ -6,7 +6,5 @@ jobs:
   first-job:
     runs-on: self-hosted
     steps:
-      - name: Print Greeting
-        run: echo "Printing greeting"
-      - name: Print Goodbye
-        run: echo "Printing Goodbye"
+      - name: Private Actions Checkout
+        uses: daspn/private-actions-checkout@v2.4
