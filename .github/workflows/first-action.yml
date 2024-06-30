@@ -13,6 +13,7 @@ jobs:
 
   second-job:
     runs-on: ubuntu-latest
+    needs: first-job
     steps:
       - name: Print Greeting and Goodbye message in the same step
         run: |
