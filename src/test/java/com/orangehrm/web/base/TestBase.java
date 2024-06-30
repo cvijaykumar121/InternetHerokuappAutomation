@@ -43,14 +43,14 @@ public class TestBase {
         OR.load(fis);
 
         if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Example: Run Chrome in headless mode
+//            ChromeOptions options = new ChromeOptions();
+//            options.addArguments("--headless"); // Example: Run Chrome in headless mode
 
             // Initialize ChromeDriver
-            driver = new ChromeDriver(options);
+//            driver = new ChromeDriver();
             System.setProperty("webdriver.chrome.driver",
-                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
-//                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
+//                    System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+                    System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
             driver = new ChromeDriver();
         } else if (config.getProperty("browser").equalsIgnoreCase("Internet Explorer")) {
             System.setProperty("webdriver.ie.driver",
