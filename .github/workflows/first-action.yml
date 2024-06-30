@@ -9,6 +9,6 @@ jobs:
       - name: Private Actions Checkout
         uses: daspn/private-actions-checkout@v2.4
       - name: Set up JDK 17
-      - uses: actions/setup-java@v4
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'  
+          java-version: '17'
