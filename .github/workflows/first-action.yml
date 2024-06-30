@@ -1,1 +1,11 @@
-first action
+name: First Workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Greeting
+        run: echo "Print Greeting step executed"
+      - name: Print Goodbye
+        run: echo "Print Goodbye step executed"
+
