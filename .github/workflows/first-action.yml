@@ -4,8 +4,8 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Greeting
+      - name: Print Greeting message
         run: echo "Print Greeting step executed"
-      - name: Print Goodbye
+      - name: Print Goodbye message
         run: echo "Print Goodbye step executed"
 
