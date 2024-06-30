@@ -1,5 +1,7 @@
 name: First Workflow
-on: workflow_dispatch
+on:
+  - workflow_dispatch
+  - push
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -8,4 +10,16 @@ jobs:
         run: echo "Print Greeting step executed"
       - name: Print Goodbye message
         run: echo "Print Goodbye step executed"
+
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Greeting and Goodbye message in the same step
+        run: |
+          echo "Printing Greeting message executed"
+          echo "Printing Goodbye message executed"
+      - name: After printing greeting and goodbye message step
+        run: |
+          echo "After printing the message"
+          echo "Last step of second job"
 
